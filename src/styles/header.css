@@ -117,7 +117,7 @@
     }
   
     .profile-menu-flex {
-      position: fixed;
+      /* position: fixed; */
       top: 1rem;
       right: 1.5rem;
     }
