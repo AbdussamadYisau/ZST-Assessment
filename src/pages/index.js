@@ -9,9 +9,11 @@ export default function Home() {
   const [selectedFilter, setSelectedFilter] = useState(0);
 
   return (
+    <>
+    <Header />
     <main
     >
-      <Header />
+      
       <Filter
         selectedFilter={selectedFilter}
         setSelectedFilter={setSelectedFilter}
@@ -19,5 +21,7 @@ export default function Home() {
 
       <Cards list={list2} selectedCategory={selectedFilter} />
     </main>
+
+    </>
   )
 }
