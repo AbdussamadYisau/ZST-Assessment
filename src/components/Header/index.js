@@ -30,7 +30,7 @@ function Header() {
           <BasicMenu />
         </div>
       </div>
-      <MobileSearchBar />
+      {/* <MobileSearchBar /> */}
       <SimpleBottomNavigation />
     </div>
   );
