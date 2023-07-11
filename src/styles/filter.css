@@ -8,6 +8,10 @@
     overflow-x: auto;
   }
   
+  .filter-div::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
   .links-box {
     display: flex;
     flex-direction: column;
