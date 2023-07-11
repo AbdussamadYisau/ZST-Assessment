@@ -10,10 +10,9 @@ export default function Home() {
 
   return (
     <>
-    <Header />
     <main
     >
-      
+      <Header />
       <Filter
         selectedFilter={selectedFilter}
         setSelectedFilter={setSelectedFilter}

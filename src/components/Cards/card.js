@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import StarRateRoundedIcon from "@mui/icons-material/StarRateRounded";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -7,6 +8,12 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 
 function Card({ card }) {
+  const [liked, setLiked] = useState(false);
+
+  const handleLikeToggle = () => {
+    setLiked((prevLiked) => !prevLiked);
+  };
+
   return (
     <div className="card-box">
       <Swiper
@@ -21,7 +28,12 @@ function Card({ card }) {
       >
         {card.imgSrc.map((src, i) => (
           <SwiperSlide key={i}>
-            <img src={src} className="card-img" />
+            <div className="image-container">
+              <img src={src} className="card-img" />
+              <button className={`like-button ${liked ? 'liked' : ''}`} onClick={handleLikeToggle}>
+                <FavoriteIcon color={liked ? 'error' : 'inherit'} style={{fill: liked ? "red" : "white"}} />
+              </button>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -34,7 +46,7 @@ function Card({ card }) {
       </div>
       <p style={{ margin: 0, color: "var(--font-grey)" }}>{card.desc}</p>
       <p style={{ margin: 0, color: "var(--font-grey)" }}>{card.date}</p>
-      <p style={{ margin: "0.2rem", fontSize: "1rem", color: "var(--black" }}>
+      <p style={{ margin: "0.2rem", fontSize: "1rem", color: "var(--black)" }}>
         <span style={{ fontWeight: "600" }}>${card.price}</span> night
       </p>
     </div>
